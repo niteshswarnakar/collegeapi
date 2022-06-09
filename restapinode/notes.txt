@@ -1,0 +1,7 @@
+some code and commands required in node js
+
+
+#this is to receive post data from the request
+
+app.use(express.urlencoded({ extended: true }));
+
