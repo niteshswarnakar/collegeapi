@@ -27,6 +27,7 @@ app.post("/", (req, res) => {
   res.send(req.body);
 });
 
+// * create data in mongodb database
 app.post("/api/students", async (req, res) => {
   console.log("req.body is - ", req.body);
   const formData = new URLSearchParams();
@@ -57,6 +58,28 @@ app.post("/api/students", async (req, res) => {
   } catch (err) {
     console.log(err);
   }
+});
+
+//* read data from mongodb database
+app.get("/api/requestlist", async (req, res) => {
+  let requestlist = await RequestModel.find();
+  console.log("resquest list - ", requestlist);
+  res.send(requestlist);
+});
+
+app.get("/api/modify", async (req, res) => {
+  const updatedRequest = await RequestModel.updateOne(
+    {
+      user: "thanos",
+    },
+    {
+      $set: {
+        user: "nitesh swarnakar",
+      },
+    }
+  );
+
+  res.send(updatedRequest);
 });
 
 app.use("/users", userRoutes);
