@@ -1,0 +1,25 @@
+.headerdiv {
+  display: absolute;
+  top: 0;
+  position: sticky;
+  z-index: 2;
+  font-size: 1.5rem;
+  width: 100%;
+  color: #eee;
+  background-color: #02b0ac;
+  border-bottom: 1px solid white;
+}
+.header {
+  margin: auto;
+  height: 2.5rem;
+  max-width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}

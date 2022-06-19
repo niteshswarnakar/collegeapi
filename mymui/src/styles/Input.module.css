@@ -1,0 +1,24 @@
+.inputbox {
+  display: flex;
+  max-width: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.mylabel {
+  font-size: 1.9rem;
+  font-weight: 500;
+  color: #eee;
+}
+
+.myinput {
+  padding: 10px;
+  font-size: 1.2rem;
+  color: rgb(48, 48, 48);
+  max-width: 40rem;
+  border-radius: 5px;
+  height: 3rem;
+  background-color: #eee;
+  border: none;
+  box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.3);
+}

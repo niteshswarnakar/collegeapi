@@ -1,8 +1,3 @@
-import express from "express";
-// import fetch from "node-fetch";
-import { v4 as uuidv4 } from "uuid";
-const router = express.Router();
-import { getUsers, getuser, adduser } from "../controller/users.js";
 const users = [
   {
     prog: "BCT",
@@ -38,10 +33,22 @@ const users = [
   },
 ];
 
-router.get("/", getUsers);
+export const getUsers = (req, res) => {
+  res.send(users);
+};
 
-router.get("/:id", getuser);
+export const getuser = (req, res) => {
+  const { id } = req.params;
+  const foundUser = users.find((user) => id == user.id);
+  console.log(foundUser);
+  console.log("user id from url is ", id);
+  res.send(foundUser);
+};
 
-router.post("/", adduser);
-
-export default router;
+export const adduser = (req, res) => {
+  const userId = uuidv4();
+  const newuser = { ...req.body, id: userId };
+  users.unshift(newuser);
+  console.log(newuser);
+  res.send(users);
+};

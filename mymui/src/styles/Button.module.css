@@ -1,0 +1,9 @@
+.mybutton {
+  height: 2.5rem;
+  width: 6rem;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 7px;
+  background-color: rgb(42, 42, 227);
+  color: white;
+}

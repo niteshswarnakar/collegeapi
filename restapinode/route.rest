@@ -1,0 +1,11 @@
+GET http://localhost:5000/users/
+
+###
+
+POST http://localhost:5000/api/students 
+
+{
+    "prog":"BCT",
+    "batch":075,
+    "group":C
+}
